@@ -1,0 +1,83 @@
+/* Tags Html */
+body{
+	color: #333333;
+	font-family: "Raleway";
+}
+
+/* IDs */
+
+/* Header */
+
+.header-news{	
+	padding: 20px;
+	margin-bottom: 60px;
+}
+
+.btn-search{
+	font-size: 20px;
+	padding: 6px 12px;
+	margin-left: 5px;
+}
+
+/* Main */
+
+.main-div{
+
+}
+
+.title-news{
+	padding-top: 10px;
+	font-size: 22px;
+	color: #333333;	
+}
+
+.title-news a:link {
+	text-decoration: none;
+	color: #333333;
+}
+
+.src-news{
+	font-size: 16px;
+	padding: 12px;
+	background-color: #cccccc;
+}
+
+.item-news {
+	background-color: ;
+	padding: 14px;
+}
+
+.time-news{
+	font-family: 'Lato';	
+	text-align: right;
+	margin-bottom: 20px;
+}
+
+/* Footer */
+
+.footer-above{
+	min-height: 120px;	
+	padding: 20px 0px;
+	margin-top: 40px;
+	background-color: #c9d0be;	
+}
+
+.social{
+	padding-top: 20px;	
+}
+
+.footer-below{
+	color: #ebeced;
+	background-color: #2e323c;	
+}
+
+footer .footer-below p{
+	padding-top: 12px;
+}
+
+
+
+
+.bd {
+
+}
