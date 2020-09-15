@@ -31,6 +31,8 @@
 	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>	
 	
+	<link rel="icon" href="img/fav-symbol.png" sizes="16x16">
+	
 </head>
 
 <body>
@@ -38,16 +40,17 @@
 	<!-- Conteúdo Principal -->
 	<main class="main-div" id="main">
 	
-		<header class="header-news bd">
+		<header class="header-news">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6 col-lg-6 top-text mb">
-						<h1>My Breaking News<h1>
+					<div class="col-sm-6 col-lg-6">
+						<!-- Logo Bug Hunters -->
+						<a class="navbar-left" href="index.html"><img src="img/goNews-logo.png" id="main-logo" alt="logo"/></a>
 					</div>
 					<div class="col-sm-6 col-lg-6">	
 						<form class="navbar-form navbar-right" role="search">
 							<div class="form-group"><input class="form-control input-lg" type="text" placeholder="Busca"></div>
-							<button class="btn btn-default btn-search" type="submit"><span class="fa fa-search"></span></button>
+							<button class="btn btn-search" type="submit"><span class="fa fa-search"></span></button>
 						</form>					
 					</div>					
 				</div>
@@ -68,12 +71,12 @@
 							</a>
 							<div class="info-news">
 								<h2 class="title-news" id="teste1"><a id="teste2" target="_blank" href=""></a></h2>
-								<h3 id="teste-fonte" class="src-news bd"></h3>
+								<h3 id="teste-fonte" class="src-news"></h3>
 								<h6 id="teste-time" class="time-news"></h6>
 								<p id="teste-t" align="justify"></p>									
 							</div>	
 						</div>	
-						<hr style="border: 2px solid gray;">
+						<hr class="bd-line">
 					</div>					
 					
 
@@ -91,7 +94,7 @@
 				<div class="row">
 					<!-- Footer: Primeira Coluna (logo) -->
 					<div class="col-md-3 col-md-offset-1 footer-col">
-						<a href="index.html"><img src="" id="simple-logo" class="img-fluid" alt="logo simples"></a>
+						<a href="index.html"><img src="img/goNews-logoLight.png" id="simple-logo" class="img-fluid" alt="logo simples"></a>
 					</div>
 					<!-- Footer: Segunda Coluna (redes sociais) -->					
 					<div class="col-md-3 col-md-offset-1 footer-col social">
@@ -122,7 +125,7 @@
 				
 					<!-- Footer: Terceira Coluna -->						
 					<div class="col-md-3 col-md-offset-1 footer-col">
-						<p>
+						<p id="p-footer">
 							<strong>Lorem ipsum</strong>
 							<br>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
@@ -136,7 +139,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p>&copy; 2020 <a href="http://rachel-mendes.blogspot.com/">rachel-mendes.blogspot.com</a></p>
+                        <p id="p-copy">&copy; 2020 <a target="_blank" href="http://rachel-mendes.blogspot.com/">rachel-mendes.blogspot.com</a></p>
                     </div>					
                 </div>
             </div>

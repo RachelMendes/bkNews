@@ -1,24 +1,57 @@
 /* Tags Html */
 body{
-	color: #333333;
 	font-family: "Raleway";
+	color: #333333;
+    background-color: #f4f4ef;
 }
 
 /* IDs */
+#main-logo, #simple-logo{
+	max-width: 240px;
+}
+
+#p-footer{
+	padding: 8px 0px;
+	color: #f4f4ef;
+}
+
+#p-copy{
+	text-align: center;
+}
+
+#p-copy a{
+	text-decoration: none;
+	color: #f4f4ef;
+}
+
+#p-copy a:hover{
+	color: #f7882f;
+}
 
 /* Header */
 
 .header-news{	
 	padding: 20px;
 	margin-bottom: 60px;
+    background-color: #f8f8f8;
+    border: 2px solid #e7e7e7;
 }
 
 .btn-search{
 	font-size: 20px;
 	padding: 6px 12px;
 	margin-left: 5px;
+	color: #333333;
+	background-color:#ffffff;
+	border-color: #adadad;
 }
 
+.btn-search:hover {
+    color: #f4f4ef;
+    background-color: #f7882f;
+    border: #adadad;
+}
+	
 /* Main */
 
 .main-div{
@@ -36,10 +69,15 @@ body{
 	color: #333333;
 }
 
+.title-news a:hover {
+    color: #f7882f;
+}
+
 .src-news{
 	font-size: 16px;
 	padding: 12px;
-	background-color: #cccccc;
+	background-color: #f0c5a3;
+	border-left: 8px solid #f7882f;
 }
 
 .item-news {
@@ -53,13 +91,17 @@ body{
 	margin-bottom: 20px;
 }
 
+.bd-line{
+	border: 2px solid #1a405f;
+}
+
 /* Footer */
 
 .footer-above{
-	min-height: 120px;	
+	min-height: 140px;	
 	padding: 20px 0px;
 	margin-top: 40px;
-	background-color: #c9d0be;	
+	background-color: #1a405f;	
 }
 
 .social{
@@ -67,7 +109,7 @@ body{
 }
 
 .footer-below{
-	color: #ebeced;
+	color: #f4f4ef;
 	background-color: #2e323c;	
 }
 
@@ -79,5 +121,6 @@ footer .footer-below p{
 
 
 .bd {
-
+	border-bottom: 4px solid #1a405f;
+	padding-bottom: 40px;
 }
