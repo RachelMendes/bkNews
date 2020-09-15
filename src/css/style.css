@@ -60,7 +60,7 @@ body{
 
 .title-news{
 	padding-top: 10px;
-	font-size: 22px;
+	font-size: 20px;
 	color: #333333;	
 }
 
@@ -93,6 +93,23 @@ body{
 
 .bd-line{
 	border: 2px solid #1a405f;
+	margin-bottom: 20px;
+}
+
+.pagination > li > a:hover{
+	color: #f4f4ef;
+	background-color: #f7882f;
+}
+
+.pagination > .active > a{
+	color: #f4f4ef;
+	background-color: #f7882f;
+	border-color: #f0c5a3;
+}
+
+.page-item{
+	font-size: 16px;
+	font-family: 'Lato';
 }
 
 /* Footer */
@@ -121,6 +138,5 @@ footer .footer-below p{
 
 
 .bd {
-	border-bottom: 4px solid #1a405f;
-	padding-bottom: 40px;
+	border: 2px solid #1a405f;
 }
