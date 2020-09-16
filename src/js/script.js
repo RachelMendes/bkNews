@@ -1,8 +1,9 @@
-
 window.onload = function(){
 
 var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=jp&' +	  
+          'country=jp&' +
+		  'pageSize=15&' +
+		  'page=1&' +
           'apiKey=0e87d15ebad2463b803afd25220483a5';
 var req = new Request(url);
 fetch(req)
@@ -29,8 +30,13 @@ fetch(req)
 				
 				var dt = new Date(data.articles[i].publishedAt);
 				
+				newsImg.attr('src', "img/goImg.jpg");
 				newsImg.attr('src', data.articles[i].urlToImage);
 				newsImg.attr('href', data.articles[i].url);				
+				
+				newsImg.error(function(){
+					$(this).unbind("error").attr("src", "img/goImg.jpg");
+				});
 				
 				newsURL.append(data.articles[i].title);
 				newsURL.attr('href', data.articles[i].url);
