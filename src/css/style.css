@@ -134,9 +134,23 @@ footer .footer-below p{
 	padding-top: 12px;
 }
 
+.btn-rs{
+	color: #f4f4ef;
+	font-size: 16px;
+	border: solid 3px #f4f4ef;
+	background-color: transparent;
+	transition: all 0.3s ease-in-out;
+	margin-top: 15px;	
+	border-radius: 80%;
+}
 
+.btn-rs:hover{
+	color: #f7882f;
+	border-color: #f7882f;
+}
 
 
 .bd {
 	border: 2px solid #1a405f;
 }
+
