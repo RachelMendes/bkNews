@@ -51,10 +51,30 @@ body{
 	border-color: #adadad;
 }
 
-.btn-search:hover {
+.btn-search:hover{
     color: #f4f4ef;
     background-color: #f7882f;
     border-color: #adadad;
+}
+
+.lang-btn{
+    background-color: #f8f8f8;	
+	border: none;
+	padding: 16px 0px;
+	margin: 0px 4px;
+}
+
+.lang-img{
+	width: 30px;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    border-radius: 50%;	
+}
+
+.lang-img:hover, .lang-img:focus{
+    outline: none;	
+	border-color: #368cbe;
+    box-shadow: 0 0 8px #368cbe;	
 }
 	
 /* Main */

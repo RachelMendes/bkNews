@@ -21,6 +21,8 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">	
 	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js">
+
     <!-- Custom JS -->
 	<script src="js/script.js" type="text/javascript"></script>	 
 	
@@ -43,11 +45,25 @@
 						<!-- Logo Go News -->
 						<a class="navbar-left" href="index.html"><img src="img/goNews-logo.png" id="main-logo" alt="logo"/></a>
 					</div>
+					
 					<div class="col-sm-6 col-lg-6">	
 						<form class="navbar-form navbar-right" role="search">
 							<div class="form-group"><input class="form-control input-lg" type="text" placeholder="Busca"></div>
 							<button class="btn btn-search" type="submit"><span class="fa fa-search"></span></button>
-						</form>					
+						</form>	
+
+						<!-- Escolha de notícias por países: Estados Unidos e Brasil -->
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<button class="lang-btn" data-toggle="tooltip" data-placement="bottom" title="Notícias do Brasil" onClick="showNews(urlBr);">
+									<img class="lang-img" src="img/brazil.png" alt="Br News"/>
+								</button>
+								<button class="lang-btn" data-toggle="tooltip" data-placement="bottom" title="Notícias dos EUA" onClick="showNews(urlUs);">
+									<img class="lang-img" src="img/usa.png" alt="Us News"/>
+								</button>								
+							</li>	
+						</ul>	
+						
 					</div>					
 				</div>
 		</header>
@@ -58,20 +74,20 @@
 				<div id="news-container" class="row">
 				
 					<div class="row">
-						<div id="" class="col col-sm-3 col-md-5 col-lg-5"></div>
-						<div id="" class="col col-sm-6 col-md-2 col-lg-2">
+						<div class="col col-sm-3 col-md-5 col-lg-5"></div>
+						<div class="col col-sm-6 col-md-2 col-lg-2">
 							<span><div class="loader">
 								<span class="sr-only">Loading...</span>
 							</div></span><h3 id="load">Loading...</h3>							
 						</div>										
-						<div id="" class="col col-sm-3 col-md-5 col-lg-5"></div>										
+						<div class="col col-sm-3 col-md-5 col-lg-5"></div>										
 					</div>
-					
+										
 				</div>	
 			</div>
 			
 		</section>
-	
+		
 		<section>
 			<div class="container">
 				<div class="row">

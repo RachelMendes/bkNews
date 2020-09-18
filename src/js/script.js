@@ -1,10 +1,26 @@
-window.onload = function(){
+var urlUs = 'https://newsapi.org/v2/top-headlines?' +
+            'country=us&' +
+		    'pageSize=15&' +
+		    'page=1&' +
+            'apiKey=0e87d15ebad2463b803afd25220483a5';
+			
+var urlBr = 'https://newsapi.org/v2/top-headlines?' +
+            'country=br&' +
+		    'pageSize=15&' +
+		    'page=1&' +
+            'apiKey=0e87d15ebad2463b803afd25220483a5';			
 
-var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=jp&' +
-		  'pageSize=15&' +
-		  'page=1&' +
-          'apiKey=0e87d15ebad2463b803afd25220483a5';
+var urlS = 'http://newsapi.org/v2/everything?' +
+           'q=Apple&' +
+           'from=2020-09-18&' +
+           'sortBy=popularity&' +
+		   'pageSize=15&' +
+		   'page=1&' +		   
+           'apiKey=0e87d15ebad2463b803afd25220483a5';
+
+
+function showNews(url){
+		  
 var req = new Request(url);
 fetch(req)
 
@@ -82,3 +98,10 @@ fetch(req)
 	});
 
 };
+
+window.onload = showNews(urlUs);
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
