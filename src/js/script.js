@@ -1,32 +1,30 @@
-var urlUs = 'https://newsapi.org/v2/top-headlines?' +
+var baseUrl = 'https://newsapi.org/v2';
+var apiKeyVal = '0e87d15ebad2463b803afd25220483a5';
+
+var urlUs = baseUrl + '/top-headlines?' +
             'country=us&' +
 		    'pageSize=15&' +
 		    'page=1&' +
-            'apiKey=0e87d15ebad2463b803afd25220483a5';
+            'apiKey=' + apiKeyVal;
 			
-var urlBr = 'https://newsapi.org/v2/top-headlines?' +
+var urlBr = baseUrl + '/top-headlines?' +
             'country=br&' +
 		    'pageSize=15&' +
 		    'page=1&' +
-            'apiKey=0e87d15ebad2463b803afd25220483a5';			
+            'apiKey=' + apiKeyVal;
 
-var urlS = 'http://newsapi.org/v2/everything?' +
-           'q=Apple&' +
-           'from=2020-09-18&' +
-           'sortBy=popularity&' +
-		   'pageSize=15&' +
-		   'page=1&' +		   
-           'apiKey=0e87d15ebad2463b803afd25220483a5';
+var urlS = baseUrl + '/everything?' +
+	'from=2020-09-18&' +
+	'sortBy=popularity&' +
+	'pageSize=15&' +
+	'page=1&' +		   
+	'apiKey=' + apiKeyVal;
 
 
 function showNews(url){
-		  
-var req = new Request(url);
-fetch(req)
-
-	.then(function(response){
-		response.json().then(function(data){ 
-
+	var req = new Request(url);
+	fetch(req).then(function(response){
+		response.json().then(function(data){
 			console.log("Total de artigos: " + data.articles.length);			
 			var i;
 			var j = 1;
@@ -36,7 +34,6 @@ fetch(req)
 			var newsRow;	
 			
 			for (i = 0; i < data.articles.length; i++){
-				
 				var newsImg = $('<img class="img-responsive img-thumbnail" alt="Foto">');
 				var newsURL = $('<a target="_blank">');
 				var newsTitle = $('<h2 class="title-news">');
@@ -59,7 +56,7 @@ fetch(req)
 				newsTitle.append(newsURL);
 				
 				newsSource.append(data.articles[i].source.name);
-				newsDate.append(dt.getFullYear() + "/" + dt.getMonth() + "/" + dt.getDate());
+				newsDate.append(dt.getDate() + "/" + dt.getMonth() + "/" + dt.getFullYear());
 				newsDesc.append(data.articles[i].description);
 				
 				var infoNews = $('<div class="info-news">');
@@ -87,21 +84,19 @@ fetch(req)
 				
 				newsRow.append(newsColumn);
 				newsContainer.append(newsRow);
-				
 			}
-			
 		});
-	})
-
-	.catch(function(err){ 
+	}).catch(function(err){ 
 		console.error('Failed retrieving information', err);
 	});
-
 };
 
-window.onload = showNews(urlUs);
-
-
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+window.onload = function () {	
+	$("#form-search").submit(function(e) {
+		e.preventDefault();
+		var inputSearch = $('#news-s');
+		var tmpUrl = urlS + '&q=' + inputSearch.val();
+		showNews(tmpUrl);
+	});
+	showNews(urlUs);
+};
