@@ -1,6 +1,6 @@
 var baseUrl = 'https://newsapi.org/v2';
 var apiKeyVal = '0e87d15ebad2463b803afd25220483a5';
-
+			
 var urlUs = baseUrl + '/top-headlines?' +
             'country=us&' +
 		    'pageSize=15&' +
@@ -120,15 +120,15 @@ function showNews(url){
 	});
 };
 
-function getUrlParameter(sParam) {
-    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
+function getUrlParameter(newsParam) {
+    var newsPageURL = decodeURIComponent(window.location.search.substring(1)),
+        newsURLVar = newsPageURL.split('&'),
+        newsParameterName,
         i;
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : sParameterName[1];
+    for (i = 0; i < newsURLVar.length; i++) {
+        newsParameterName = newsURLVar[i].split('=');
+        if (newsParameterName[0] === newsParam) {
+            return newsParameterName[1] === undefined ? true : newsParameterName[1];
         }
     }
 };
@@ -171,5 +171,5 @@ window.onload = function () {
 	var paginaAtual = getPaginaAtual();
 	urlUs += '&page=' + paginaAtual;	
 	showNews(urlUs);
-	pagNews();
+	pagNews();		
 };
