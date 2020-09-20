@@ -17,7 +17,7 @@ var urlS = baseUrl + '/everything?' +
 	'pageSize=15&' +		   
 	'apiKey=' + apiKeyVal;
 	
-var urlApp = 'http://localhost/bk-news/index.html';	
+var urlApp = 'https://rachelmendes.github.io/bkNews/src/index.html';	
 
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
