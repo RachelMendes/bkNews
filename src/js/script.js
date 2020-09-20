@@ -19,7 +19,23 @@ var urlS = baseUrl + '/everything?' +
 	'pageSize=15&' +
 	'page=1&' +		   
 	'apiKey=' + apiKeyVal;
+	
+var urlApp = 'http://localhost/bk-news/index.html';	
 
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+ 
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+ 
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
 
 function showNews(url){
 	var req = new Request(url);
@@ -91,6 +107,42 @@ function showNews(url){
 	});
 };
 
+function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+function pagNews(){	
+	var i;
+	var pagUl = $('#ul-pages');
+	var paginaAtual = getUrlParameter('page');
+	if(paginaAtual === undefined){
+		paginaAtual = 1;
+	} else {
+		paginaAtual = parseInt(paginaAtual);
+	}
+	console.log(pagUl);
+	var urlAtual = (' ' + window.location).slice(1);	
+	console.log("urlAtual: " + urlAtual);	
+	for (i = paginaAtual; i < paginaAtual+5; i++){
+		console.log("i= " + i);
+		var pagLi = $('<li class="page-item">');	
+		var pagLiA = $('<a class="page-link">');
+		pagLiA.attr('href', urlApp + '?page=' + i);
+		pagLiA.append(i);
+		pagLi.append(pagLiA);
+		pagUl.append(pagLi);
+	}
+}
+
 window.onload = function () {	
 	$("#form-search").submit(function(e) {
 		e.preventDefault();
@@ -99,4 +151,5 @@ window.onload = function () {
 		showNews(tmpUrl);
 	});
 	showNews(urlUs);
+	pagNews();
 };
