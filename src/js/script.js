@@ -4,20 +4,17 @@ var apiKeyVal = '0e87d15ebad2463b803afd25220483a5';
 var urlUs = baseUrl + '/top-headlines?' +
             'country=us&' +
 		    'pageSize=15&' +
-		    'page=1&' +
             'apiKey=' + apiKeyVal;
 			
 var urlBr = baseUrl + '/top-headlines?' +
             'country=br&' +
 		    'pageSize=15&' +
-		    'page=1&' +
             'apiKey=' + apiKeyVal;
 
 var urlS = baseUrl + '/everything?' +
 	'from=2020-09-18&' +
 	'sortBy=popularity&' +
-	'pageSize=15&' +
-	'page=1&' +		   
+	'pageSize=15&' +		   
 	'apiKey=' + apiKeyVal;
 	
 var urlApp = 'http://localhost/bk-news/index.html';	
@@ -105,7 +102,7 @@ function showNews(url){
 	}).catch(function(err){ 
 		console.error('Failed retrieving information', err);
 	});
-};
+};	
 
 function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -120,15 +117,20 @@ function getUrlParameter(sParam) {
     }
 };
 
-function pagNews(){	
-	var i;
-	var pagUl = $('#ul-pages');
+function getPaginaAtual(){
 	var paginaAtual = getUrlParameter('page');
 	if(paginaAtual === undefined){
 		paginaAtual = 1;
 	} else {
 		paginaAtual = parseInt(paginaAtual);
 	}
+	return paginaAtual;
+}
+
+function pagNews(){	
+	var i;
+	var pagUl = $('#ul-pages');
+	var paginaAtual = getPaginaAtual();
 	console.log(pagUl);
 	var urlAtual = (' ' + window.location).slice(1);	
 	console.log("urlAtual: " + urlAtual);	
@@ -150,6 +152,8 @@ window.onload = function () {
 		var tmpUrl = urlS + '&q=' + inputSearch.val();
 		showNews(tmpUrl);
 	});
+	var paginaAtual = getPaginaAtual();
+	urlUs += '&page=' + paginaAtual;	
 	showNews(urlUs);
 	pagNews();
 };
